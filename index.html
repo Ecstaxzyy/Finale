@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Suku Bunga Real-Time</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Analisis Suku Bunga Real-Time</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#analysis">Analisis</a></li>
+                <li><a href="#forecast">Proyeksi</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Halaman Analisis Suku Bunga -->
+        <section id="analysis">
+            <h2>Grafik Pergerakan Suku Bunga</h2>
+            <canvas id="interestRateChart"></canvas>
+
+            <!-- Input untuk Analisis Pengguna -->
+            <div id="userInput">
+                <h3>Masukkan Data Keuangan Anda</h3>
+                <label for="loanAmount">Jumlah Pinjaman (Rp): </label>
+                <input type="number" id="loanAmount" placeholder="Masukkan jumlah pinjaman" />
+                <label for="loanTerm">Periode Pinjaman (tahun): </label>
+                <input type="number" id="loanTerm" placeholder="Masukkan periode pinjaman" />
+                <label for="interestRate">Tingkat Suku Bunga (%): </label>
+                <input type="number" id="interestRate" placeholder="Masukkan tingkat suku bunga" />
+
+                <button id="calculateButton">Hitung Cicilan</button>
+            </div>
+
+            <!-- Menampilkan Hasil Analisis -->
+            <div id="analysisResult">
+                <h3>Hasil Analisis</h3>
+                <p id="monthlyPayment">Cicilan Bulanan: Rp 0</p>
+                <p id="totalPayment">Total Pembayaran: Rp 0</p>
+            </div>
+        </section>
+
+        <!-- Halaman Proyeksi -->
+        <section id="forecast">
+            <h2>Proyeksi Suku Bunga</h2>
+
+            <!-- Input untuk Proyeksi -->
+            <div id="forecast-input">
+                <label for="projectionPeriod">Periode Proyeksi (Tahun): </label>
+                <input type="number" id="projectionPeriod" value="5" min="1" />
+                
+                <label for="scenario">Pilih Skenario Proyeksi: </label>
+                <select id="scenario">
+                    <option value="optimistic">Optimis</option>
+                    <option value="realistic" selected>Realistis</option>
+                    <option value="pessimistic">Pesimis</option>
+                </select>
+                
+                <button id="generateProjection">Hasilkan Proyeksi</button>
+            </div>
+
+            <div id="projectionDetails"></div>
+
+            <!-- Grafik Proyeksi -->
+            <canvas id="forecastChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Analisis Suku Bunga. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
