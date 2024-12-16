@@ -13,7 +13,6 @@
             <ul>
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#analysis">Analisis</a></li>
-                <li><a href="#forecast">Proyeksi</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </nav>
@@ -29,11 +28,11 @@
             <div id="userInput">
                 <h3>Masukkan Data Keuangan Anda</h3>
                 <label for="loanAmount">Jumlah Pinjaman (Rp): </label>
-                <input type="number" id="loanAmount" placeholder="Masukkan jumlah pinjaman" />
+                <input type="number" id="loanAmount" placeholder="Masukkan jumlah pinjaman (contoh 1000000)" />
                 <label for="loanTerm">Periode Pinjaman (tahun): </label>
-                <input type="number" id="loanTerm" placeholder="Masukkan periode pinjaman" />
+                <input type="number" id="loanTerm" placeholder="Masukkan periode pinjaman(contoh 12)" />
                 <label for="interestRate">Tingkat Suku Bunga (%): </label>
-                <input type="number" id="interestRate" placeholder="Masukkan tingkat suku bunga" />
+                <input type="number" id="interestRate" placeholder="Masukkan tingkat suku bunga(contoh 0.3)" />
 
                 <button id="calculateButton">Hitung Cicilan</button>
             </div>
@@ -44,31 +43,6 @@
                 <p id="monthlyPayment">Cicilan Bulanan: Rp 0</p>
                 <p id="totalPayment">Total Pembayaran: Rp 0</p>
             </div>
-        </section>
-
-        <!-- Halaman Proyeksi -->
-        <section id="forecast">
-            <h2>Proyeksi Suku Bunga</h2>
-
-            <!-- Input untuk Proyeksi -->
-            <div id="forecast-input">
-                <label for="projectionPeriod">Periode Proyeksi (Tahun): </label>
-                <input type="number" id="projectionPeriod" value="5" min="1" />
-                
-                <label for="scenario">Pilih Skenario Proyeksi: </label>
-                <select id="scenario">
-                    <option value="optimistic">Optimis</option>
-                    <option value="realistic" selected>Realistis</option>
-                    <option value="pessimistic">Pesimis</option>
-                </select>
-                
-                <button id="generateProjection">Hasilkan Proyeksi</button>
-            </div>
-
-            <div id="projectionDetails"></div>
-
-            <!-- Grafik Proyeksi -->
-            <canvas id="forecastChart"></canvas>
         </section>
     </main>
 
